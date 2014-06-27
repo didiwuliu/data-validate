@@ -2,7 +2,7 @@
  * @title index
  * @description
  * index
- * @author zhangchunsheng423@yongche.org
+ * @author zhangchunsheng423@gmail.com
  * @version V1.0
  * @date 2014-06-27
  * @copyright  Copyright (c) 2014-2014 Luomor Inc. (http://www.luomor.com)

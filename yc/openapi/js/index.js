@@ -49,7 +49,7 @@ $(document).ready(function() {
                                         var valid_value = valid_key_array.valid_key;
                                         if(product_list_value.valid_value == null) {
                                             flag = false;
-                                            console.log("city:" + key + ",car_type:" + car_type_key + ",product_type:" + product_list_key + ": " + valid_value + " is not set\n");
+                                            console.log("city:" + key + ",car_type:" + car_type_key + ",product_type:" + product_list_key + ", " + valid_value + " is not set\n");
                                         }
                                     }
                                     if(flag) {
@@ -76,7 +76,7 @@ $(document).ready(function() {
                                             var valid_value = valid_key_array.valid_key;
                                             if(product_type_value.valid_value == null) {
                                                 flag = false;
-                                                console.log("city:" + key + ",car_type:" + car_type_key + ",product_type:" + product_list_key + ": " + valid_value + " is not set\n");
+                                                console.log("city:" + key + ",car_type:" + car_type_key + ",product_type:" + product_list_key + ", " + valid_value + " is not set\n");
                                             }
                                         }
                                         if(flag) {
@@ -86,7 +86,7 @@ $(document).ready(function() {
                                 }
                             }
                         } else {
-                            console.log("city:$key,car_type:$car_type_key has an error\n");
+                            console.log("city:" + key, + "car_type:" + car_type_key + " has an error\n");
                         }
                     }
                 }

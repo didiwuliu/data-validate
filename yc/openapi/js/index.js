@@ -53,7 +53,7 @@ $(document).ready(function() {
                                         }
                                     }
                                     if(flag) {
-                                        console.log("city" + key + ",car_type:" + car_type_key + ",product_type:" + product_list_key + " is right\n");
+                                        console.log("city:" + key + ",car_type:" + car_type_key + ",product_type:" + product_list_key + " is right\n");
                                     }
                                 } else if(product_list_key == 7 || product_list_key == 8 || product_list_key == 11 || product_list_key == 12) {
                                     for(var product_type_key in product_list_value) {
@@ -80,13 +80,13 @@ $(document).ready(function() {
                                             }
                                         }
                                         if(flag) {
-                                            console.log("city" + key + ",car_type:" + car_type_key + ",product_type:" + product_list_key + " is right\n");
+                                            console.log("city:" + key + ",car_type:" + car_type_key + ",product_type:" + product_list_key + " is right\n");
                                         }
                                     }
                                 }
                             }
                         } else {
-                            console.log("city:" + key, + "car_type:" + car_type_key + " has an error\n");
+                            console.log("city:" + key, + "car_type:" + car_type_key + " has an error. name,person_number,order_id,desc is not set\n");
                         }
                     }
                 }

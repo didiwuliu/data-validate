@@ -22,9 +22,9 @@ $(document).ready(function() {
                 var price_list = result.price_list;
 
                 for(var key in price_list) {
-                    var car_type = price_list.key;
+                    var car_type = price_list[key];
                     for(var car_type_key in car_type) {
-                        var car_type_value = car_type.car_type_key;
+                        var car_type_value = car_type[car_type_key];
                         if(typeof car_type_value.name != "undefined"
                             && typeof car_type_value.person_number != "undefined"
                             && typeof car_type_value.order_id != "undefined"
@@ -32,7 +32,7 @@ $(document).ready(function() {
                             && typeof car_type_value.list != "undefined") {
                             var product_list = car_type_value.list;
                             for(var product_list_key in product_list) {
-                                var product_list_value = product_list.product_list_key;
+                                var product_list_value = product_list[product_list_key];
                                 if(product_list_key == 1) {
                                     var valid_key_array = [
                                         "min_fee",
@@ -46,8 +46,8 @@ $(document).ready(function() {
                                     ];
                                     var flag = true;
                                     for(var valid_key in valid_key_array) {
-                                        var valid_value = valid_key_array.valid_key;
-                                        if(product_list_value.valid_value == null) {
+                                        var valid_value = valid_key_array[valid_key];
+                                        if(product_list_value[valid_value] == null) {
                                             flag = false;
                                             console.log("city:" + key + ",car_type:" + car_type_key + ",product_type:" + product_list_key + ", " + valid_value + " is not set\n");
                                         }
@@ -57,7 +57,7 @@ $(document).ready(function() {
                                     }
                                 } else if(product_list_key == 7 || product_list_key == 8 || product_list_key == 11 || product_list_key == 12) {
                                     for(var product_type_key in product_list_value) {
-                                        var product_type_value = product_list_value.product_type_key;
+                                        var product_type_value = product_list_value[product_type_key];
                                         var valid_key_array = [
                                             "fee",
                                             "min_fee",
@@ -73,8 +73,8 @@ $(document).ready(function() {
                                         ];
                                         var flag = true;
                                         for(var valid_key in valid_key_array) {
-                                            var valid_value = valid_key_array.valid_key;
-                                            if(product_type_value.valid_value == null) {
+                                            var valid_value = valid_key_array[valid_key];
+                                            if(product_type_value[valid_value] == null) {
                                                 flag = false;
                                                 console.log("city:" + key + ",car_type:" + car_type_key + ",product_type:" + product_list_key + ", " + valid_value + " is not set\n");
                                             }

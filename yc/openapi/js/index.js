@@ -10,9 +10,11 @@
 var url = "http://data-validate.yongche.org/index.php?method=all_price";
 var url = "http://data-validate.yongche.test/index.php?method=all_price";
 
+var errors = [];
+
 $(document).ready(function() {
     $("#check").click(function() {
-        $("#result").html("");
+        clear();
         $("#wait").html("校验中...");
         $.ajax({
             url: url,
@@ -20,6 +22,11 @@ $(document).ready(function() {
             success: function(data) {
                 $("#wait").html("正在校验...");
                 var result = JSON.parse(data);
+
+                if(typeof result.result == "undefined") {
+                    $("#wait").html("网络连接错误，请重试");
+                    return;
+                }
 
                 result = result.result;
                 var price_list = result.price_list;
@@ -34,18 +41,17 @@ $(document).ready(function() {
                 var product_type_value;
 
                 var log = "";
+                errors = [];
 
                 for(var key in price_list) {
-                    if(key != "phoenix")
-                        continue;
                     car_type = price_list[key];
                     for(var car_type_key in car_type) {
                         car_type_value = car_type[car_type_key];
                         if(typeof car_type_value.name != "undefined"
-                            || typeof car_type_value.person_number != "undefined"
-                            || typeof car_type_value.order_id != "undefined"
-                            || typeof car_type_value.desc != "undefined"
-                            || typeof car_type_value.list != "undefined") {
+                            && typeof car_type_value.person_number != "undefined"
+                            && typeof car_type_value.order_id != "undefined"
+                            && typeof car_type_value.desc != "undefined"
+                            && typeof car_type_value.list != "undefined") {
                             product_list = car_type_value.list;
                             for(var product_list_key in product_list) {
                                 product_list_value = product_list[product_list_key];
@@ -106,26 +112,44 @@ $(document).ready(function() {
                                 }
                             }
                         } else {
-                            log = "city:" + key, + "car_type:" + car_type_key + " has an error. name,person_number,order_id,desc is not set\n";
+                            log = "city:" + key + ",car_type:" + car_type_key + " has an error. name,person_number,order_id,desc is not set\n";
                             error(log);
                         }
                     }
                 }
                 $("#wait").html("校验完毕...");
+                showErrors();
             }
         });
     });
 });
 
+function clear() {
+    $("#result").html("");
+    $("#errors").html("");
+}
+
 function info(content) {
-    log(content, "green");
+    log("result", content, "green");
 }
 
 function error(content) {
-    log(content, "red");
+    errors.push(content);
+    log("result", content, "red");
 }
 
-function log(content, color) {
-    var result = $("#result");
+function log(id, content, color) {
+    var result = $("#" + id);
     result.append($("<li style=\"color:" + color + "\">" + content + "</li>"));
+}
+
+function showErrors() {
+    var errors_div = $("#errors");
+    if(errors.length == 0) {
+        errors_div.append("数据正确")
+    } else {
+        for(var error in errors) {
+            log("errors", errors[error], "red");
+        }
+    }
 }

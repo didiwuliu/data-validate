@@ -4,7 +4,7 @@
  * @description
  * index
  * @author zhangchunsheng423@yongche.org
- * @version V3.0
+ * @version V1.0
  * @date 2014-06-27
  * @copyright  Copyright (c) 2014-2014 Luomor Inc. (http://www.luomor.com)
  */
@@ -32,14 +32,6 @@ function login() {
         "uuid" => "111111",
         "macaddress" => "111111",
     );
-    /*$array = array(
-        "grant_type:password",
-        "username:16811303455",
-        "password:111111",
-        "device_token:111111",
-        "uuid:111111",
-        "macaddress:111111",
-    );*/
     $header = array(
         'User-Agent:iWeidao/5.2.2 (iPhone; iOS 7.0.2)',
         'Accept-Encoding:deflate',

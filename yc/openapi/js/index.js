@@ -12,6 +12,7 @@ var url = "http://data-validate.yongche.test/index.php?method=all_price";
 
 $(document).ready(function() {
     $("#check").click(function() {
+        $("#result").html("");
         $("#wait").html("校验中...");
         $.ajax({
             url: url,
@@ -35,14 +36,16 @@ $(document).ready(function() {
                 var log = "";
 
                 for(var key in price_list) {
+                    if(key != "phoenix")
+                        continue;
                     car_type = price_list[key];
                     for(var car_type_key in car_type) {
                         car_type_value = car_type[car_type_key];
                         if(typeof car_type_value.name != "undefined"
-                            && typeof car_type_value.person_number != "undefined"
-                            && typeof car_type_value.order_id != "undefined"
-                            && typeof car_type_value.desc != "undefined"
-                            && typeof car_type_value.list != "undefined") {
+                            || typeof car_type_value.person_number != "undefined"
+                            || typeof car_type_value.order_id != "undefined"
+                            || typeof car_type_value.desc != "undefined"
+                            || typeof car_type_value.list != "undefined") {
                             product_list = car_type_value.list;
                             for(var product_list_key in product_list) {
                                 product_list_value = product_list[product_list_key];

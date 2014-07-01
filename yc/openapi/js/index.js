@@ -16,6 +16,8 @@ $(document).ready(function() {
     $("#check").click(function() {
         clear();
         $("#wait").html("校验中...");
+        var server = $("#server").val();
+        url = url + "&server=" + server;
         $.ajax({
             url: url,
             type: "get",

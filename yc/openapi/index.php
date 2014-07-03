@@ -38,7 +38,8 @@ function login($server) {
         $header = array(
             'User-Agent:iWeidao/5.2.2 (iPhone; iOS 7.0.2)',
             'Accept-Encoding:deflate',
-            'Authorization:Basic MTU0NmNhMjdiOGMwYjBiZmM5MGM1Nzg4NDE2ZjBiYzU6NDM2YWY5OGRlZGIwZGZmMjM0NmU1Mzc5MTNhYTlkYzU='
+            //'Authorization:Basic MTU0NmNhMjdiOGMwYjBiZmM5MGM1Nzg4NDE2ZjBiYzU6NDM2YWY5OGRlZGIwZGZmMjM0NmU1Mzc5MTNhYTlkYzU='
+            'Authorization:Basic ZDBkYTYxYWJkNjI0Zjg4ODMxZDExNzM1MzdiMjk0MzA6YjMyYzBiZDM3NTBiNDk2OTdhMWM4NDk4YWZmZDhlY2M='
         );
     } elseif($server == "test") {
         $url = "http://openapi.yongche.org/oauth2/token.php";

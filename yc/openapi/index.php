@@ -27,7 +27,7 @@ if($method == "login") {
 
 function login($server) {
     if($server == "release") {
-        $url = "https://open.yongche.com/oauth2/token.php";
+        $url = "https://openapi.yongche.com/oauth2/token.php";
         $array = array(
             "grant_type" => "password",
             "username" => "16846014601",
@@ -66,7 +66,7 @@ function login($server) {
 
 function get_all_price($access_token, $server) {
     if($server == "release") {
-        $url = "https://open.yongche.com/v3/price/all?last_version=0&product_type_id=1%2C7%2C8%2C11%2C12&access_token=$access_token";
+        $url = "https://openapi.yongche.com/v3/price/all?last_version=0&product_type_id=1%2C7%2C8%2C11%2C12&access_token=$access_token";
     } else {
         $url = "http://openapi.yongche.org/v3/price/all?last_version=0&product_type_id=1%2C7%2C8%2C11%2C12&access_token=$access_token";
     }

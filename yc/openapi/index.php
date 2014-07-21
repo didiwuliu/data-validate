@@ -66,9 +66,9 @@ function login($server) {
 
 function get_all_price($access_token, $server) {
     if($server == "release") {
-        $url = "https://open.yongche.com/v3/price/all?last_version=0&product_type_id=1%2C7%2C8%2C11%2C12&access_token=$access_token";
+        $url = "https://open.yongche.com/v3/price/all?last_version=0&product_type_id=1%2C7%2C8%2C11%2C12&access_token=$access_token&filter_price_list=0";
     } else {
-        $url = "http://openapi.yongche.org/v3/price/all?last_version=0&product_type_id=1%2C7%2C8%2C11%2C12&access_token=$access_token";
+        $url = "http://openapi.yongche.org/v3/price/all?last_version=0&product_type_id=1%2C7%2C8%2C11%2C12&access_token=$access_token&filter_price_list=0";
     }
 
     $header = array(

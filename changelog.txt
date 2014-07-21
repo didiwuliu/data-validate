@@ -15,6 +15,9 @@
 [data-validate_1.0.0.1 2014-07-17 张春生]
 1.新功能:线上调整为https
 
+[data-validate_1.0.0.1 2014-07-21 张春生]
+1.新功能:增加filter_price_list参数
+
 --备注分类
 1、新功能：
 2、Bug:

@@ -7,8 +7,8 @@
  * @date 2014-06-27
  * @copyright  Copyright (c) 2014-2014 Luomor Inc. (http://www.luomor.com)
  */
-var url = "http://data-validate.yongche.org/index.php?method=all_price";
-var url = "http://data-validate.yongche.test/index.php?method=all_price";
+var url = "http://data-validate.didiwuliu.org/index.php?method=all_price";
+var url = "http://data-validate.didiwuliu.test/index.php?method=all_price";
 
 var errors = [];
 

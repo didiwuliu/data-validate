@@ -32,8 +32,8 @@ function login($server) {
             "grant_type" => "password",
             "username" => "16846014601",
             "password" => "123456",
-            "device_token" => "111111",
-            "uuid" => "111111",
+            "device_token" => "666666",
+            "uuid" => "666666",
             "macaddress" => "111111",
         );
 
@@ -49,8 +49,8 @@ function login($server) {
             "grant_type" => "password",
             "username" => "16811303455",
             "password" => "111111",
-            "device_token" => "111111",
-            "uuid" => "111111",
+            "device_token" => "666666",
+            "uuid" => "666666",
             "macaddress" => "111111",
         );
 
